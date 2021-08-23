@@ -1,21 +1,24 @@
-// Import variables
-@import "./variables.scss";
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
-// Import Bootstrap
-@import "bootstrap/scss/bootstrap.scss";
+$fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
 
-// Global CSS
-@import "./global.scss";
+.font-size-1x5 {
+  font-size: 1.5rem;
+}
 
-// Components
-@import "./components/buttons.scss";
-@import "./components/navbar.scss";
-@import "./components/bootstrap-overrides";
+.fa-facebook {
+  color: #3b5998;
+}
 
-// Sections
-@import "./sections/about.scss";
-@import "./sections/cta.scss";
-@import "./sections/footer.scss";
-@import "./sections/intro.scss";
-@import "./sections/products.scss";
-@import "./sections/store.scss";
+.fa-twitter {
+  color: #55acee;
+}
+
+.fa-instagram {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+}

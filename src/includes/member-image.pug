@@ -1,0 +1,4 @@
+picture
+    source(type='image/webp' srcset!='assets/members/' + member.image + '?as=webp&width=800')
+    source(type='image/jpeg' srcset!='assets/members/' + member.image + '?as=jpeg&width=800')
+    img.img-fluid.rounded.mb-2(src!='assets/members/' + member.image + '?as=jpeg&width=800' class={'d-sm-none': small, 'd-none': !small, 'd-sm-block': !small})

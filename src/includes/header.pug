@@ -1,4 +1,21 @@
-header
-    h1.site-heading.text-center.text-faded.d-none.d-lg-block
-        span.site-heading-upper.text-primary.mb-3 A Free Bootstrap Business Theme
-        span.site-heading-lower Business Casual
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container
+        a.navbar-brand(href='index.pug') Fineberg Lab
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                -
+                    const pages = [
+                        {"name": "Home", "url": "index.pug"},
+                        {"name": "Members", "url": "members.pug"},
+                        {"name": "Publications", "url": "publications.pug"},
+                        {"name": "Projects", "url": "projects.pug"},
+                        {"name": "Contact", "url": "contact.pug"},
+                    ]
+                each page in pages
+                    li.nav-item
+                        if page.url === activePage
+                            a.nav-link.active(href=page.url) #{page.name}
+                        else
+                            a.nav-link(href=page.url) #{page.name}

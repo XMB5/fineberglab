@@ -1,13 +1,15 @@
 {
   "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-pug": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "@parcel/transformer-image": "^2.0.0-nightly.2423",
+    "@parcel/transformer-pug": "^2.0.0-nightly.801",
+    "@parcel/transformer-sass": "^2.0.0-nightly.801",
     "browser-sync": "^2.27.5",
     "concurrently": "^6.2.1",
-    "parcel": "^2.0.0-rc.0"
+    "parcel": "^2.0.0-nightly.799",
+    "sharp": "^0.28.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.0"
   },
   "scripts": {

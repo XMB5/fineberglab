@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+
+    head
+
+        include includes/head
+
+        title Fineberg Lab | Members
+
+    body
+
+        - const activePage = 'members.pug';
+            include includes/header
+
+        .container.pt-4
+
+            h2.pb-2 Members
+
+            -
+                const members = [
+                    {
+                        "name": "Dr. Sarah Fineberg",
+                        "title": "Assistant Professor of Psychiatry",
+                        "image": "fineberg.jpg",
+                        "description": "Dr. Fineberg holds an MD PhD from the University of Iowa, where she studied the molecular mechanisms that control early fate decisions for neural stem cells in mouse brain. She initially became interested in science as an undergraduate student at Oberlin College in physiology classes, where mechanism came alive in narratives about the evolutionary and individual history of the organism. She came to Yale in 2010 to pursue clinical and research training in psychiatry. Her current research engages both stories and brain-based mechanisms of mental illness, asking questions about how patient social experiences relate to neural circuits and learning mechanisms.",
+                        "emailScrambled": "p^o^e+cfkb_bod=v^ib+bar",
+                        "phoneScrambled": "(.*53-*222*-.56"
+                    },
+                    {
+                        "name": "Dr. Mona Lisa",
+                        "title": "Famous Painting by da Vinci",
+                        "image": "mona.jpg",
+                        "description": "Dr. Fineberg holds an MD PhD from the University of Iowa, where she studied the molecular mechanisms that control early fate decisions for neural stem cells in mouse brain. She initially became interested in science as an undergraduate student at Oberlin College in physiology classes, where mechanism came alive in narratives about the evolutionary and individual history of the organism. She came to Yale in 2010 to pursue clinical and research training in psychiatry. Her current research engages both stories and brain-based mechanisms of mental illness, asking questions about how patient social experiences relate to neural circuits and learning mechanisms.",
+                        "emailScrambled": "p^o^e+cfkb_bod=v^ib+bar"
+                    },
+                    {
+                        "name": "The Scream",
+                        "title": "Epitomizing the Anxiety of the Human Condition",
+                        "image": "scream.jpg",
+                        "description": "Dr. Fineberg holds an MD PhD from the University of Iowa, where she studied the molecular mechanisms that control early fate decisions for neural stem cells in mouse brain. She initially became interested in science as an undergraduate student at Oberlin College in physiology classes, where mechanism came alive in narratives about the evolutionary and individual history of the organism. She came to Yale in 2010 to pursue clinical and research training in psychiatry. Her current research engages both stories and brain-based mechanisms of mental illness, asking questions about how patient social experiences relate to neural circuits and learning mechanisms.",
+                        "emailScrambled": "p^o^e+cfkb_bod=v^ib+bar"
+                    }
+                ];
+
+                let firstMember = true;
+
+            each member in members
+                if firstMember
+                    - firstMember = false
+                else
+                    hr.d-md-none.my-2
+                .row.py-2
+                    - let small;
+                    .col-6.col-sm-5.col-md-3
+                        - small = false
+                            include includes/member-image
+                    .col-12.col-sm-7.col-md-9
+                        h5 #{member.name}
+                        h6.text-muted.mb-2 #{member.title}
+                        - small = true
+                            include includes/member-image
+                        p #{member.description}
+                        if member.emailScrambled
+                            a.card-link(scrambled=member.emailScrambled scrambledurlprefix='mailto')
+                        if member.phoneScrambled
+                            a.card-link(scrambled=member.phoneScrambled scrambledurlprefix='tel')
+
+            include includes/footer
+
+        include includes/scripts
+        script(src='js/unscramble.js')

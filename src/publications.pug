@@ -1,0 +1,76 @@
+doctype html
+html(lang='en')
+
+    head
+
+        include includes/head
+
+        title Fineberg Lab | Publications
+
+    body
+
+        - const activePage = 'publications.pug';
+            include includes/header
+
+        .container.pt-4
+
+            h2.pb-2 Publications
+
+            .row.row-cols-1.row-cols-lg-2.g-4
+                -
+                    const publications = [
+                        {
+                            "title": "Modulation of Trust in Borderline Personality Disorder by Script-Based Imaginal Exposure to Betrayal",
+                            "authors": "R Shapiro-Thompson, T Shah, C Yi, N Jackson, DT Diaz, S Fineberg",
+                            "publisher": "PsyArXiv",
+                            "year": 2021,
+                            "description": "Interpersonal and trust-related difficulties are central features of Borderline Personality Disorder (BPD). In this study, we applied script-driven betrayal imagery to evoke mistrustful behavior in a social reinforcement learning task. We compared this approach to the standard confederate paradigm in twenty-one BPD and twenty healthy control (HC) participants. The script-driven imagery evoked transient negative affect and decreased trusting behavior in both groups. Across conditions, we also replicated previously reported between-group differences in affect and task behavior, results that support the validity of script-driven imagery as an alternative social task stimulus. This approach is appealing for eliminating deception, scaling easily, and evoking disorder-specific states of social difficulty.",
+                            "url": "./assets/publications/modulation_of_trust_preprint.pdf"
+                        },
+                        {
+                            "title": "Mentalization and Embodied Selfhood in Borderline Personality Disorder",
+                            "authors": "ES Neustadter, A Fotopoulou, M Steinfeld, SK Fineberg",
+                            "publisher": "Journal of Consciousness Studies",
+                            "year": 2021,
+                            "description": "Aberrations of self-experience are considered a core feature of Borderline Personality Disorder (BPD). While prominent etiologic accounts of BPD, such as the mentalization based approach, appeal to the developmental constitution of self in early infant-caregiver environments, they often rely on a conception of self that is not explicitly articulated. Moreover, self-experience in BPD is often theorized at the level of narrative identity, thus minimizing the role of embodied experience. In this article, we present the hypothesis that disordered self and interpersonal functioning in BPD result, in part, from impairments in “embodied mentalization,” that manifest foundationally as alterations in minimal embodied selfhood, ie the first-person experience of being an individuated embodied subject. This account of BPD, which engages early intersubjective experiences has the potential to integrate phenomenological, developmental, and symptomatic findings in BPD, and is consistent with contemporary theories of brain function.",
+                            "url": "./assets/publications/mentalization_and_embodied_selfhood.pdf",
+                        },
+                        {
+                            "title": "Improving research practice for studying borderline personality disorder: lessons from the clinic",
+                            "authors": "K Dhaliwal, A Danzig, SK Fineberg",
+                            "publisher": "Chronic Stress",
+                            "year": 2020,
+                            "description": "Borderline personality disorder is an often misunderstood and underdiagnosed mental illness characterized in part by affective lability. Clinicians’ unique understanding of the disorder has allowed them to develop disorder-specific approaches to treatment. In this review, we highlight how borderline personality disorder research can benefit from greater engagement with key disorder-specific features, including symptom variability and interpersonal sensitivity. In addition, we propose that research which employs interactive tasks will be more reflective of the kinds of volatility found in the real-life situations. Finally, we discuss how mixed-methodology can serve as a way for recovery-oriented research to practice the very ideals and recommendations it suggests. We use a patient case to contextualize each section. As interest in borderline personality disorder continues to grow, an intentional emphasis on a person-centered, recovery-focused, and disorder- specific approach to research is needed.",
+                            "url": "./assets/publications/improving_research_practice.pdf",
+                        },
+                        {
+                            "title": "Collaborative Deprescribing in Borderline Personality Disorder: A Narrative Review",
+                            "authors": "SK Fineberg, S Gupta, J Leavitt",
+                            "publisher": "Harvard Review of Psychiatry",
+                            "year": 2019,
+                            "description": "Psychopharmacology in borderline personality disorder (BPD) is complicated by comorbid disorders, substance use, sensitivity to side effects, risk of self-harm through medication misuse, and intense but transient symptoms. Patients’ relationships with medications may range from tenuous to highly enmeshed, and may profoundly influence the response to treatment. For these reasons, awareness of current evidence and flexible approaches are particularly relevant to prescribing in BPD. In this narrative review, we illustrate the current status of medication management in BPD by focusing on polypharmacy. We use a single vignette to explore the limitations of prescribing multiple medications and the factors contributing to polypharmacy. With the same vignette, and using the framework of deprescribing, we describe how medication regimens can be reduced to a necessary minimum. Deprescribing, originally …",
+                            "url": "./assets/publications/collaborative_deprescribing_in_borderline.pdf"
+                        },
+                        {
+                            "title": "Differential valuation and learning from social and nonsocial cues in borderline personality disorder",
+                            "authors": "SK Fineberg, J Leavitt, DS Stahl, S Kronemer, CD Landry, A Alexander-Bloch, LT Hunt, PR Corlett",
+                            "publisher": "Biological Psychiatry",
+                            "year": 2018,
+                            "description": "Volatile interpersonal relationships are a core feature of borderline personality disorder (BPD) and lead to devastating disruption of patients’ personal and professional lives. Quantitative models of social decision making and learning hold promise for defining the underlying mechanisms of this problem. In this study, we tested BPD and control subject weighting of social versus nonsocial information and their learning about choices under stable and volatile conditions. We compared behavior using quantitative models. Subjects (n = 20 BPD, n = 23 control subjects) played an extended reward learning task with a partner (confederate) that requires learning about nonsocial and social cue reward probability (the social valuation task). Task experience was measured using language metrics: explicit emotions/beliefs, talk about the confederate, and implicit distress (using the previously established …",
+                            "url": "./assets/publications/differential_valuation_and_learning.pdf"
+                        }
+                    ]
+                each publication in publications
+                    .col
+                        .card
+                            .card-header.py-3
+                                a.link-dark.stretched-link.mt-2(href=publication.url) #{publication.title}
+                                .mt-2.small #{publication.authors}
+                            .card-body
+                                p.card-text #{publication.description}
+                            .card-footer.text-muted
+                                | #{publication.publisher} #{publication.year}
+
+            include includes/footer
+
+        include includes/scripts

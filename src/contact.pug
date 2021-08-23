@@ -1,0 +1,105 @@
+doctype html
+html(lang='en')
+
+    head
+
+        include includes/head
+
+        title Fineberg Lab | Contact
+
+    body
+
+        - const activePage = 'contact.pug';
+            include includes/header
+
+        .container.pt-4
+
+            h2.pb-2 Contact
+            //dl.row
+            //    dt.col-2.col-lg-1 Phone
+            //    dd.col-10.col-lg-11
+            //        a(href='#') 860-555-5555
+            //    dt.col-2.col-lg-1 Email
+            //    dd.col-10.col-lg-11
+            //        a(href='#') myemail@mydomain.com
+            //    dt.col-2.col-lg-1 Twitter
+            //    dd.col-10.col-lg-11
+            //        a(href='#') myemail@mydomain.com
+            //    dt.col-2.col-lg-1 Facebook
+            //    dd.col-10.col-lg-11
+            //        a(href='#') myemail@mydomain.com
+
+            table.table.table-bordered
+                tbody
+                    tr
+                        th.col-3.col-lg-2(scope='row')
+                            i.fas.fa-phone
+                            |  Phone
+                        td
+                            a(href='#') +1-860-555-5555
+                    tr
+                        th(scope='row')
+                            i.fas.fa-envelope
+                            |  Email
+                        td
+                            a(href='#') myemail@myemail.com
+                    tr
+                        th(scope='row')
+                            i.fab.fa-twitter
+                            |  Twitter
+                        td
+                            a(href='#') @fineberglab
+                    tr
+                        th(scope='row')
+                            i.fab.fa-instagram
+                            |  Instagram
+                        td
+                            a(href='#') fineberglab
+                    tr
+                        th(scope='row')
+                            i.fab.fa-facebook
+                            |  Facebook
+                        td
+                            a(href='#') fineberglab
+
+            //.row.row-cols-3.g-4
+            //    .col
+            //        .card
+            //            .card-header
+            //                i.fas.fa-phone
+            //                |  Phone
+            //            .card-body
+            //                a(scrambled='(.*53-*222*-.56' scrambledurlprefix='tel')
+            //    .col
+            //        .card
+            //            .card-header
+            //                i.fas.fa-envelope
+            //                |  Email
+            //            .card-body
+            //                a(scrambled='p^o^e+cfkb_bod=v^ib+bar' scrambledurlprefix='mailto')
+            //    .col
+            //        .card
+            //            .card-header
+            //                i.fab.fa-twitter
+            //                |  Facebook
+            //            .card-body
+            //                a(href='#') fineberglab
+            //    .col
+            //        .card
+            //            .card-header
+            //                i.fab.fa-instagram
+            //                |  Twitter
+            //            .card-body
+            //                a(href='#') @fineberglab
+            //    .col
+            //        .card
+            //            .card-header
+            //                i.fab.fa-facebook
+            //                |  Twitter
+            //            .card-body
+            //                a(href='#') @fineberglab
+
+            include includes/footer
+
+        include includes/scripts
+        script(src='js/unscramble.js')
